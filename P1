@@ -1,0 +1,23 @@
+//La apasarea unui buton sa se aprinda led-ul, iar la ridicarea degetului de pe buton sa se stinga
+
+int buton_pin =2;
+int led_pin = 13;
+void setup()
+{
+pinMode(led_pin,OUTPUT);
+pinMode(buton_pin,INPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+if(digitalRead(buton_pin)==HIGH)
+{
+digitalWrite(led_pin, HIGH);
+Serial.println("Led Aprins");
+}
+else
+{
+digitalWrite(led_pin, LOW);
+Serial.println("Led Stins");
+}
+}
